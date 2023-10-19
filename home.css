@@ -1,0 +1,42 @@
+
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    margin: auto;
+    width: 1500px;
+    height: 740px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  /* main */
+  main{
+    padding-top: 1.5px;
+    width: 1500px;
+    height: 740px;
+    border-radius: 20px;
+    background-position: center;
+    background-image: url("data/img/background.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+main button{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+main button:hover{
+    transform: scale(0.94);
+    transition: 0.2s ease-in-out;
+}
+
+
+main button a{
+  text-decoration: none;
+}
