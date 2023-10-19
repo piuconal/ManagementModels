@@ -11,7 +11,6 @@ body {
 /* main */
 main {
   position: relative;
-  padding-top: 1.5px;
   width: 1500px;
   height: 740px;
   border-radius: 20px;
@@ -350,4 +349,64 @@ main {
   color: green;
   font-weight: bold;
   background-color: beige;
+}
+
+
+.table-list{
+  margin-top: 120px;
+  margin-left: -150px;
+  position: absolute;
+  width: 900px;
+  height: 430px;
+}
+
+/* List-model(get-data) */
+table {
+  font-size: 11px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* custon button Delete and Edit */
+/* style.css */
+.edit-button {
+  background-color: #4CAF50;
+  color: white; 
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-button:hover {
+  transform: scale(0.95);
+  transition: 0.2s ease;
+  background-color: #45a049; 
+}
+
+.delete-button {
+  background-color: #f44336; 
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-button:hover {
+  transform: scale(0.95);
+  transition: 0.2s ease;
+  background-color: #e53935;
 }

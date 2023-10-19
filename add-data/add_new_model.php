@@ -1,9 +1,9 @@
 <?php
 // Kết nối đến cơ sở dữ liệu MySQL
-$servername = "localhost";  // Thay thế bằng tên máy chủ của bạn
-$username = "root";     // Thay thế bằng tên người dùng của bạn
-$password = "110602@Hc";     // Thay thế bằng mật khẩu của bạn
-$dbname = "mana_models";  // Thay thế bằng tên cơ sở dữ liệu của bạn
+$servername = "localhost";  
+$username = "root";     
+$password = "110602@Hc";    
+$dbname = "mana_models";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Kiểm tra kết nối

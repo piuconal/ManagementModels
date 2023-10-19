@@ -11,7 +11,7 @@
   }
   /* main */
   main{
-    padding-top: 1.5px;
+    position: relative;
     width: 1500px;
     height: 740px;
     border-radius: 20px;
@@ -30,6 +30,7 @@ main button{
     height: 40px;
     border-radius: 20px;
     font-weight: bold;
+    color: darkmagenta;
 }
 main button:hover{
     transform: scale(0.94);
@@ -37,6 +38,81 @@ main button:hover{
 }
 
 
-main button a{
-  text-decoration: none;
+/* Popup đăng nhập */
+.dn{
+  z-index: 2;
+  display: none;
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom right, rgb(239, 236, 239), rgb(153, 192, 243)); 
+}
+
+.dn form{
+  margin-top: 50px;
+  width: 400px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-group {
+  width: 250px;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dn button{
+  margin-top: 20px;
+}
+
+.dn input{
+  width: 140px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  padding-left: 15px;
+}
+/* close login */
+.move{
+  margin-top: 10px;
+  position: absolute;
+  width: 390px;
+  height: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.move p{
+  padding: 5px 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+  color: azure;
+  background-color: red;
+}
+
+.move p:hover{
+  cursor: pointer;
+  transform: scale(0.93);
+  transition: 0.2s ease-in-out;
+}
+
+/* box-black */
+#phu{
+  position: absolute;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 1;
+  width: 1500px;
+  height: 740px;
+  display: none;
+  border-radius: 20px;
 }
