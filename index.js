@@ -7,13 +7,11 @@ function themmodel() {
   div.style.display = "block";
   box.style.display = "block";
 }
-
 // close popup new-model
 function xoa_themmodel() {
   div.style.display = "none";
   box.style.display = "none";
 }
-
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     xoa_themmodel();
@@ -30,7 +28,6 @@ document.addEventListener('keydown', function (event) {
     xoa_editmodel();
   }
 });
-
 // close popup delete-model
 function xoa_deletemodel() {
   div3.style.display = "none";
@@ -149,7 +146,9 @@ document.addEventListener("DOMContentLoaded", function() {
                   deleteButton.addEventListener("click", function () {
                       div3.style.display = "block";
                       box.style.display = "block";
-
+                    
+                      const row = deleteButton.closest("tr");
+                      document.getElementById("id2").value = row.cells[0].textContent;
                       });
                   });
 
@@ -159,6 +158,4 @@ document.addEventListener("DOMContentLoaded", function() {
   xhttp.open("GET", "get_models.php", true);
   xhttp.send();
 });
-
-
 
