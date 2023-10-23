@@ -117,8 +117,75 @@
                   <button type="submit">THÊM</button>
                 </form>
             </div>
-        </div>
+        </div>  
 
+        <!-- edit-model -->
+        <div id="hiddenDiv2" class="model-edit">
+            <div class="close">
+                <p onclick="xoa_editmodel()">x</p>
+            </div>
+
+            <div class="content-new">
+                <p>SỬA THÔNG TIN MODEL</p>
+            </div>
+
+            <div class="form-container">
+                <form id="dataForm1" method="post" action="add-data/edit_model.php">
+                    <div class="form-group">
+                        <label for="name">ID-Model:</label>
+                        <input type="text" id="id1" name="id_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Tên:</label>
+                        <input type="text" id="name1" name="name_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="path">Đường dẫn:</label>
+                        <input type="text" id="path1" name="path_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Ngày:</label>
+                        <input type="date" id="date1" name="date_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="acc">Acc:</label>
+                        <input type="number" step="0.01" id="acc1" name="acc_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pre">Pre:</label>
+                        <input type="number" step="0.01" id="pre1" name="pre_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rec">Rec:</label>
+                        <input type="number" step="0.01" id="rec1" name="rec_edit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="f1score">F1-score:</label>
+                        <input type="number" step="0.01" id="f1score1" name="f1score_edit" required readonly>
+                    </div>
+
+                  <!-- button-add-new-model -->
+                  <button type="submit">CẬP NHẬT</button>
+                </form>
+            </div>
+        </div> 
+
+        <!-- delete-model -->
+        <div id="hiddenDiv3" class="model-delete">
+            <div class="content-new">
+                <p>BẠN CÓ CHẮC CHẮN MUỐN XÓA MODEL KHÔNG?</p>
+            </div>
+
+            <div class="btn-delete">
+                <button id="accept">
+                    <span>ĐỒNG Ý</span>
+                </button>
+
+                <button id="cancel" onclick="xoa_deletemodel()">
+                    <span>KHÔNG</span>
+                </button>
+            </div>
+        </div> 
         <!-- table-list-model -->
         <div class="table-list">
             <table id="model-table">
@@ -144,7 +211,6 @@
             </table>
         </div>
     </main>
-    
     <script src="index.js"></script>
 </body>
 </html>

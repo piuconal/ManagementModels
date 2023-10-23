@@ -1,5 +1,7 @@
 var box = document.getElementById("box");
 var div = document.getElementById("hiddenDiv");
+var div2 = document.getElementById("hiddenDiv2");
+var div3 = document.getElementById("hiddenDiv3");
 // popup thêm model
 function themmodel() {
   div.style.display = "block";
@@ -18,6 +20,40 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+// close popup edit-model
+function xoa_editmodel() {
+  div2.style.display = "none";
+  box.style.display = "none";
+}
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    xoa_editmodel();
+  }
+});
+
+// close popup delete-model
+function xoa_deletemodel() {
+  div3.style.display = "none";
+  box.style.display = "none";
+}
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    xoa_deletemodel();
+  }
+});
+
+
+// // F1-Score => Math
+// Input Pre and Rec
+document.getElementById("pre1").addEventListener("input", updateF1Score1);
+document.getElementById("rec1").addEventListener("input", updateF1Score1);
+function updateF1Score1() {
+  const pre1 = parseFloat(document.getElementById("pre1").value) || 0;
+  const rec1 = parseFloat(document.getElementById("rec1").value) || 0;
+
+  const f1score1 = 2 * ((pre1 * rec1) / (pre1 + rec1));
+  document.getElementById("f1score1").value = f1score1.toFixed(2);
+}
 // video AI
 const video = document.getElementById("myVideo");
 setTimeout(() => {
@@ -45,7 +81,6 @@ generateRandomNumberButton.addEventListener("click", function () {
     const randomNumber = Math.floor(Math.random() * 900) + 100;
     idInput.value = randomNumber;
 });
-
 
 // List-model(get-data)
 document.addEventListener("DOMContentLoaded", function() {
@@ -83,9 +118,47 @@ document.addEventListener("DOMContentLoaded", function() {
               var rateButton = document.createElement("button");
               rateButton.textContent = "Đánh giá";
               row.insertCell(10).appendChild(rateButton);
-          });
+
+              // edit-model
+              const editButtons = document.querySelectorAll(".edit-button");
+
+              editButtons.forEach((editButton) => {
+                  editButton.addEventListener("click", function () {
+                      div2.style.display = "block";
+                      box.style.display = "block";
+
+                      // sửa thông tin model
+                      const row = editButton.closest("tr");
+
+                      document.getElementById("id1").value = row.cells[0].textContent;
+                      document.getElementById("name1").value = row.cells[1].textContent;
+                      document.getElementById("path1").value = row.cells[2].textContent;
+                      document.getElementById("date1").value = row.cells[3].textContent;
+                      document.getElementById("acc1").value = row.cells[4].textContent;
+                      document.getElementById("pre1").value = row.cells[5].textContent;
+                      document.getElementById("rec1").value = row.cells[6].textContent;
+                      document.getElementById("f1score1").value = row.cells[7].textContent;
+
+                      });
+                  });
+                  
+              // remove_model
+              const deleteButtons = document.querySelectorAll(".delete-button");
+
+              deleteButtons.forEach((deleteButton) => {
+                  deleteButton.addEventListener("click", function () {
+                      div3.style.display = "block";
+                      box.style.display = "block";
+
+                      });
+                  });
+
+            });
       }
   };
   xhttp.open("GET", "get_models.php", true);
   xhttp.send();
 });
+
+
+
