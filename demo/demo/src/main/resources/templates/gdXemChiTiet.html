@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"  />
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container-fluid {
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        a.btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button.btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="text-center"><h2>[[${pageTitle}]]</h2></div>
+
+    <form th:action="@{Sua}" action="#" method="post" th:object="${sample}">
+        <div>
+            <!--            <label>ID: </label>-->
+            <input type="hidden" th:field="*{id}">
+        </div>
+        <div>
+            <label>Tên mẫu: </label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label>Mẫu có nhãn: </label>
+            <input type="text" th:field="*{type}">
+        </div>
+        <div>
+            <label>Đường dẫn: </label>
+            <input type="text" th:field="*{path}">
+            <img th:src="*{path}">
+        </div>
+        <div>
+            <label>Thời gian thêm: </label>
+            <input type="text" th:field="*{createAt}">
+        </div>
+        <div>
+            <label>Thời gian cập nhật: </label>
+            <input type="text" th:field="*{updateAt}">
+        </div>
+        <button type="submit">Sửa thông tin</button>
+        <a class="btn-delete" th:href="@{/XacNhan/{id}(id=*{id})}">Xoá</a>
+        <button type="button" class="btn-secondary m-2" onclick="cancelForm()">Cancel</button>
+    </form>
+</div>
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/QuanLyMau}]]";
+    }
+</script>
+</body>
+</html>

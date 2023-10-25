@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý mẫu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div>
+    <div><a class="h3" th:href="@{/QuanLyMau}">Quản Lý Mẫu</a></div>
+    <div>
+        <a class="h3" th:href="@{/ThemMau}">Thêm Thông Tin Mẫu</a>
+    </div>
+
+    <div th:if="${message}">
+        [[${message}]]
+    </div>
+    <div>
+        <form>
+            <label class="h2">Tìm kiếm mẫu:</label>
+            <input name="keyword" placeholder="search" type="text" th:value="${keyword}"/>
+            <input type="submit" value="Search"/>
+        </form><br/>
+    </div>
+    <div>
+        <table >
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên Mẫu</th>
+                <th>Nhãn</th>
+                <th>Đường dẫn</th>
+                <th>Thời gian thêm</th>
+                <th>Thời gian cập nhật</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="sample : ${listSamples}">
+                <tr>
+                    <td>[[${sample.id}]]</td>
+                    <td>[[${sample.name}]]</td>
+                    <td>[[${sample.type}]]</td>
+                    <td>[[${sample.path}]]</td>
+                    <td>[[${sample.createAt}]]</td>
+                    <td>[[${sample.updateAt}]]</td>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/XemChiTiet/' + ${sample.id}}">Xem chi tiết</a>
+                    </td>
+                </tr>
+            </th:block>
+
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-secondary m-2" onclick="cancelForm()">Về trang chủ</button>
+    </div>
+</div>
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/}]]";
+    }
+</script>
+</body>
+</html>

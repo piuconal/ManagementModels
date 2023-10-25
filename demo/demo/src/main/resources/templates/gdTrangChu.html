@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.EF7FIBn7w8OltAzBNF0wUgHaE8?pid=ImgDet&w=675&h=450&rs=1">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            margin: 5px auto;
+            width: 1500px;
+            height: 720px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* main */
+        main{
+            position: relative;
+            width: 1500px;
+            height: 720px;
+            border-radius: 20px;
+            background-image: linear-gradient(to bottom, #ff9966, #ff5e62);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        main button{
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        main button:hover{
+            background-color: #cbded8;
+            transform: scale(0.94);
+            transition: 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a th:href="@{/QuanLyMau}">
+            <button>
+                Models Management
+            </button>
+        </a>
+
+        <a>
+            <button>
+                Sample Management
+            </button>
+        </a>
+
+        <a>
+            <button>
+                Label Management
+            </button>
+        </a>
+    </main>
+</body>
+</html>

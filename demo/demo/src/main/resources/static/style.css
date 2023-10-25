@@ -1,0 +1,46 @@
+
+label.h2 {
+    color: #007bff;
+}
+
+a.h3 {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+a.h4 {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
