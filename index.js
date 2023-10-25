@@ -158,4 +158,3 @@ document.addEventListener("DOMContentLoaded", function() {
   xhttp.open("GET", "get_models.php", true);
   xhttp.send();
 });
-
